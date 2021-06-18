@@ -1,7 +1,7 @@
 import app from "./server.js";
 import mongodb from "mongodb";
 import dotenv from "dotenv";
-import RestaurantsDAO from "./dao/restaurantsDAO.js";
+import TyresDAO from "./dao/tyresDAO.js";
 
 dotenv.config()
 const MongoClient = mongodb.MongoClient;
@@ -9,7 +9,7 @@ const MongoClient = mongodb.MongoClient;
 const port = process.env.PORT || 8000;
 
 MongoClient.connect (
-  process.env.RESTREVIEWS_DB_URI,
+  process.env.TYRES_DB_URI,
   {
     poolsize: 100,
     wtimeout: 2500,
@@ -22,7 +22,7 @@ MongoClient.connect (
   process.exit(1)
 })
 .then(async client => {
-  await RestaurantsDAO.injectDB(client)
+  await TyresDAO.injectDB(client)
   app.listen(port, () => {
     console.log(`listening on port ${port}`)
   })
