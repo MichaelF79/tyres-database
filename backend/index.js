@@ -2,7 +2,6 @@ import app from "./server.js";
 import mongodb from "mongodb";
 import dotenv from "dotenv";
 import TyresDAO from "./dao/tyresDAO.js";
-
 dotenv.config()
 const MongoClient = mongodb.MongoClient;
 
@@ -11,7 +10,7 @@ const port = process.env.PORT || 8000;
 MongoClient.connect (
   process.env.TYRES_DB_URI,
   {
-    poolsize: 100,
+    poolSize: 50,
     wtimeout: 2500,
     useNewUrlParser: true,
     useUnifiedTopology: true

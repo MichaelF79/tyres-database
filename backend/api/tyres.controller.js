@@ -2,7 +2,7 @@ import TyresDAO from "../dao/tyresDAO.js"
 
 export default class TyresController {
   static async apiGetTyres(req, res, next) {
-    const tyresPerPage = req.query.tyresPerPage ? parseInt(req.query.tyresPerPage, 10) : 20
+    const tyresPerPage = req.query.tyresPerPage ? parseInt(req.query.tyresPerPage, 5) : 9
     const page = req.query.page ? parseInt(req.query.page, 10) : 0
 
     let filters = {}
@@ -29,20 +29,6 @@ export default class TyresController {
     }
     res.json(response)
   }
-  static async apiGetTyresById(req, res, next) {
-    try {
-      let id = req.params.id || {}
-      let tyres = await TyresDAO.getTyreByID(id)
-      if (!tyres) {
-        res.status(404).json({ error: "Not found" })
-        return
-      }
-      res.json(tyres)
-    } catch (e) {
-      console.log(`api, ${e}`)
-      res.status(500).json({ error: e })
-    }
-  }
 
   static async apiGetTyreBrands(req, res, next) {
     try {
@@ -53,4 +39,25 @@ export default class TyresController {
       res.status(500).json({ error: e })
     }
   }
+
+  static async apiGetTyreTitles(req, res, next) {
+    try {
+      let titles = await TyresDAO.getTitles()
+      res.json(titles)
+    } catch (e) {
+      console.log(`api, ${e}`)
+      res.status(500).json({ error: e })
+    }
+  }
+
+  static async apiGetTyreSizes(req, res, next) {
+    try {
+      let sizes = await TyresDAO.getSizes()
+      res.json(sizes)
+    } catch (e) {
+      console.log(`api, ${e}`)
+      res.status(500).json({ error: e })
+    }
+  }
+
 }
