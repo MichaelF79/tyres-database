@@ -121,13 +121,13 @@ const TyresList = props => {
   };
 
   return (
-    <div>
+    <div className="container">
       <div className="row pb-1">
-        <div className="input-group col-lg-4 pb-1">
+        <div className="input-group col pb-1">
           <select onChange={onChangeSearchBrand}>
             {brands.map(brand => {
               return (
-                <option value={brand}> {brand.substr(0, 20)} </option>
+                <option value={brand}> {brand.substr(0, 15)} </option>
               )
             })}
           </select>
@@ -142,11 +142,11 @@ const TyresList = props => {
           </div>
         </div>
 
-        <div className="input-group col-lg-4 pb-1">
+        <div className="input-group col pb-1">
           <select onChange={onChangeSearchTitle}>
             {titles.map(title => {
               return (
-                <option value={title}> {title.substr(0, 20)} </option>
+                <option value={title}> {title.substr(0, 15)} </option>
               )
             })}
           </select>
@@ -161,11 +161,11 @@ const TyresList = props => {
           </div>         
         </div>
 
-        <div className="input-group col-lg-4 pb-1">
+        <div className="input-group col pb-1">
           <select onChange={onChangeSearchSize}>
             {sizes.map(size => {
               return (
-                <option value={size}> {size.substr(0, 20)} </option>
+                <option value={size}> {size.substr(0, 15)} </option>
               )
             })}
           </select>        
@@ -184,10 +184,10 @@ const TyresList = props => {
       <div className="row">
         {tyres.map((tyre) => {         
           return (
-            <div className="col-lg-4 pb-1">
-              <div className="card">
-                {/* <img class="card-img-top" src={tyre.logo_url} alt={`${tyre.brand}`} /> 
-                <img className="card-img-top"src={tyre.image_url} alt={`${tyre.title}`} /> */}
+            <div className="col-lg-4 h-100 pb-1">
+              <div className="card" style={{width: 300}}>
+                
+                <img className="card-img-top"src={tyre.image_url} alt={`${tyre.title}`} />
                 <div className="card-body">             
                   <h3 className="card-title">{tyre.brand}</h3>
                   <h4 className="card-subtitle">{tyre.title}</h4>               
@@ -197,6 +197,7 @@ const TyresList = props => {
                   <p>
                   {tyre.description}
                   </p>
+                  {/* <img class="card-img-btm" src={tyre.logo_url} alt={`${tyre.brand}`} />  */}
                 </div>
               </div>
             </div>

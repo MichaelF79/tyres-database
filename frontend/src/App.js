@@ -20,9 +20,9 @@ function App() {
   return (
     <div>
       <nav className="navbar navbar-expand justify-content-center navbar-dark bg-success">
-        <a href="/tyres" className="navbar-brand mb-0 h1">
+        <span className="navbar-brand mb-0 h1">
             TyreEasy
-        </a> 
+        </span> 
         <div className="navbar-nav ms-auto">
           <li className="nav-item">
             <Link to={"/tyres"} className="nav-link">
@@ -68,7 +68,6 @@ function App() {
             </li>
             <li class="page-item"><a class="page-link"  href="#">1</a></li>
             <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
             <li class="page-item">
               <a class="page-link" href="#">Next</a>
             </li>
