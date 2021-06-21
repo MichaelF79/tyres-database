@@ -189,14 +189,15 @@ const TyresList = props => {
               <img className="card-img-top"src={tyre.logo_url} alt={`${tyre.brand}`} />                 
                 <img className="card-img-top"src={tyre.image_url} alt={`${tyre.title}`} />
                 <div className="card-body">             
-                  <h3 className="card-title">{tyre.brand}</h3>
-                  <h4 className="card-subtitle">{tyre.title}</h4>               
-                  <h5 className="card-text">
+                  <h2 className="card-title text-center">{tyre.brand}</h2>
+                  <h4 className="card-subtitle text-center mb-2">{tyre.title}</h4>               
+                  <h5 className="card-text text-center">
                     {tyre.size}                 
                   </h5>
                   <p>
                   {tyre.description}
-                  </p>                  
+                  </p>
+                  <h3 className="card-text text-center">{tyre.price}</h3>                  
                 </div>               
               </div>
             </div>
