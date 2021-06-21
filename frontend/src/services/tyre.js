@@ -17,6 +17,10 @@ class TyreDataService {
     return http.get(`/sizes`);
   }
 
+  find(query, by = "name", page = 0) {
+    return http.get(`?${by}=${query}&page=${page}`);
+  } 
+
 }
 
 export default new TyreDataService()

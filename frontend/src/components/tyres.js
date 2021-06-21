@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import TyreDataService from "../services/tyre";
-import { Link } from "react-router-dom";
 
 const Tyre = props => {
   const initialTyreState = {
-    id: "",
+    _id: null,
     brand: "",
     logo_url: "",
     title: "",
@@ -16,8 +15,8 @@ const Tyre = props => {
 
   const [tyre, setTyre] = useState(initialTyreState);
 
-  const getTyre = () => {
-    TyreDataService.get()
+  const getTyre = _id => {
+    TyreDataService.get(_id)
       .then(response => {
         setTyre(response.data);
         console.log(response.data);
@@ -28,8 +27,9 @@ const Tyre = props => {
   };
 
   useEffect(() => {
-    getTyre(props.match.params);
-  }, [props.match.params]);
+    getTyre(props.match.params._id);
+  }, [props.match.params._id]);
+
 
   return (
     <div>

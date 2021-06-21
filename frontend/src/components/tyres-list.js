@@ -123,7 +123,7 @@ const TyresList = props => {
   return (
     <div>
       <div className="row pb-1">
-        <div className="input-group .col-6 .col-md-4">
+        <div className="input-group col-lg-4 pb-1">
           <select onChange={onChangeSearchBrand}>
             {brands.map(brand => {
               return (
@@ -142,7 +142,7 @@ const TyresList = props => {
           </div>
         </div>
 
-        <div className="input-group .col-6 .col-md-4">
+        <div className="input-group col-lg-4 pb-1">
           <select onChange={onChangeSearchTitle}>
             {titles.map(title => {
               return (
@@ -161,7 +161,7 @@ const TyresList = props => {
           </div>         
         </div>
 
-        <div className="input-group .col-6 .col-md-4">
+        <div className="input-group col-lg-4 pb-1">
           <select onChange={onChangeSearchSize}>
             {sizes.map(size => {
               return (
@@ -184,19 +184,19 @@ const TyresList = props => {
       <div className="row">
         {tyres.map((tyre) => {         
           return (
-            <div className=".col-6 .col-md-4 pb-1">
+            <div className="col-lg-4 pb-1">
               <div className="card">
-                <img class="card-img-top" src={tyre.logo_url} alt={`${tyre.brand}`} /> 
-                <img className="card-img-top"src={tyre.image_url} alt={`${tyre.title}`} />
+                {/* <img class="card-img-top" src={tyre.logo_url} alt={`${tyre.brand}`} /> 
+                <img className="card-img-top"src={tyre.image_url} alt={`${tyre.title}`} /> */}
                 <div className="card-body">             
                   <h3 className="card-title">{tyre.brand}</h3>
-                  <h4 className="card-subtitle">{tyre.title}</h4>
-                  <p className="card-text">
-                    <strong>Size:</strong>{tyre.size}
+                  <h4 className="card-subtitle">{tyre.title}</h4>               
+                  <h5 className="card-text">
+                    {tyre.size}                 
+                  </h5>
+                  <p>
+                  {tyre.description}
                   </p>
-                  <p className="card-text">
-                    <strong>Description:</strong>{tyre.description}
-                  </p>                 
                 </div>
               </div>
             </div>

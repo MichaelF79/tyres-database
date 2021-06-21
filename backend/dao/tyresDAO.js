@@ -1,5 +1,5 @@
-//import mongodb from "mongodb"
-//const ObjectId = mongodb.ObjectID
+import mongodb from "mongodb"
+const ObjectId = mongodb.ObjectID
 let tyres
 
 export default class TyresDAO {
@@ -17,7 +17,7 @@ export default class TyresDAO {
   static async getTyres({
     filters = null,
     page = 0,
-    tyresPerPage = 9,
+    tyresPerPage = 15,
   } = {}) {
     let query
     if (filters) {     
