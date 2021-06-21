@@ -20,8 +20,8 @@ function App() {
   return (
     <div>
       <nav className="navbar navbar-expand justify-content-center navbar-dark bg-success">
-        <span className="navbar-brand mb-0 h1">
-            TyreEasy
+        <span className="navbar-brand mb-0">
+            <h1>TyreEasy</h1>
         </span> 
         <div className="navbar-nav ms-auto">
           <li className="nav-item">
