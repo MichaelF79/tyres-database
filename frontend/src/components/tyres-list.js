@@ -184,9 +184,8 @@ const TyresList = props => {
       <div className="row">
         {tyres.map((tyre) => {         
           return (
-            <div className="col-lg-4 h-100 pb-1">
-              <div className="card" style={{width: 300}}>
-                
+            <div className="col-lg-4 pb-1">
+              <div className="card h-100" style={{width: 300}}>                          
                 <img className="card-img-top"src={tyre.image_url} alt={`${tyre.title}`} />
                 <div className="card-body">             
                   <h3 className="card-title">{tyre.brand}</h3>
@@ -196,9 +195,9 @@ const TyresList = props => {
                   </h5>
                   <p>
                   {tyre.description}
-                  </p>
-                  {/* <img class="card-img-btm" src={tyre.logo_url} alt={`${tyre.brand}`} />  */}
+                  </p>                  
                 </div>
+                {/* <img className="card-img-btm"src={tyre.logo_url} alt={`${tyre.brand}`} /> */}
               </div>
             </div>
           );

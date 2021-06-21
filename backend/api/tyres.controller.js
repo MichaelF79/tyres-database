@@ -2,7 +2,7 @@ import TyresDAO from "../dao/tyresDAO.js"
 
 export default class TyresController {
   static async apiGetTyres(req, res, next) {
-    const tyresPerPage = req.query.tyresPerPage ? parseInt(req.query.tyresPerPage, 5) : 9
+    const tyresPerPage = req.query.tyresPerPage ? parseInt(req.query.tyresPerPage, 5) : 15
     const page = req.query.page ? parseInt(req.query.page, 10) : 0
 
     let filters = {}
