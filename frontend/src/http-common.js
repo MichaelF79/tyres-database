@@ -6,3 +6,5 @@ export default axios.create({
     "Content-type": "application/json"
   }
 });
+
+// axios library used to set a baseurl that makes it easier to use GET/POST etc requests automatically

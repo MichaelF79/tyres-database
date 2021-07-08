@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import TyreDataService from "../services/tyre";
+import TyreDataService from "../services/tyre"; // provides information from backend server
 
-const TyresList = props => {
+const TyresList = props => { //react hooks used to create state variables...
   const [tyres, setTyres] = useState([]);
   const [searchSize, setSearchSize ] = useState("");
   const [searchTitle, setSearchTitle ] = useState("");
@@ -10,14 +10,15 @@ const TyresList = props => {
   const [titles, setTitles] = useState(["All Titles"]);
   const [sizes, setSizes] = useState(["All Sizes"]);
   
-  useEffect(() => {
+  useEffect(() => { // what component needs to do after rendering
     retrieveTyres();
     retrieveBrands();
     retrieveTitles();
     retrieveSizes();
   }, []);
 
-  const onChangeSearchBrand = e => {
+  // how to select and return a choice from the dropdown filter menu
+  const onChangeSearchBrand = e => { 
     const searchBrand = e.target.value;
     setSearchBrand(searchBrand);
     
@@ -33,7 +34,7 @@ const TyresList = props => {
     setSearchTitle(searchTitle);
   };
 
-  const retrieveTyres = () => {
+  const retrieveTyres = () => { // find all tyres in db
     TyreDataService.getAll()
       .then(response => {
         console.log(response.data);
@@ -50,7 +51,7 @@ const TyresList = props => {
       .then(response => {
         console.log(response.data);
         setBrands(["All Brands"].concat(response.data));
-        
+        // 'All Brands' as first element in data
       })
       .catch(e => {
         console.log(e);
@@ -184,10 +185,10 @@ const TyresList = props => {
       <div className="row">
         {tyres.map((tyre) => {         
           return (
-            <div className="col-lg-4 pb-1">
-              <div className="card h-100" style={{width: 300}}> 
-                <img className="card-img-top"src={tyre.logo_url} alt={`${tyre.brand}`} />                 
-                <img className="card-img-top"src={tyre.image_url} alt={`${tyre.title}`} />
+            <div className="col-lg-4 mt-3 pb-1">
+              <div className="card h-100 shadow-lg p-2 mb-5 bg-white rounded" style={{width: 300}}> 
+                <img className="card-img-top rounded"src={tyre.logo_url} alt={`${tyre.brand}`} />                 
+                <img className="card-img-top rounded"src={tyre.image_url} alt={`${tyre.title}`} />
                 <div className="card-body bg-light">             
                   <h2 className="card-title text-center">{tyre.brand}</h2>
                   <h4 className="card-subtitle text-center mb-2">{tyre.title}</h4>               
@@ -199,7 +200,7 @@ const TyresList = props => {
                   </p>                                               
                 </div>
                 <div className="card-footer mt-auto">
-                  <h3 className="card-text text-center text-white bg-dark">{tyre.price}</h3>
+                  <h3 className="card-text text-center text-white bg-dark rounded">{tyre.price}</h3>
                 </div>              
               </div>
             </div>

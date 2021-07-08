@@ -1,41 +1,43 @@
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Switch, Route, Link } from "react-router-dom"; // differnt url routes
+import 'bootstrap/dist/css/bootstrap.min.css'; // app styled with bootstrap
 
 import Tyre from "./components/tyres";
 import TyresList from "./components/tyres-list";
 import Login from "./components/login";
 
-function App() {
-  const [user, setUser] = React.useState(null);
+function App() { 
 
+  const [user, setUser] = React.useState(null);
+  // user state variable created with react hooks
   async function login(user = null) {
-    setUser(user);
+    setUser(user); // function with user passed it with default null. If a user is passed in to function it will set user
   }
 
-  async function logout() {
+  async function logout() { // when logged out user returns to null (login)
     setUser(null)
   }
 
   return (
     <div>
-      <nav className="navbar navbar-expand justify-content-center navbar-dark bg-success">
-        <span className="navbar-brand mb-0">
-            <h1>TyreEasy</h1>
-        </span> 
+      <nav className="navbar navbar-expand justify-content-center navbar-dark bg-dark text-info">
+        <span className="navbar-brand justify-content-center" href="#">       
+          <img src="assets/images/logo.png" width="50em" height="50em" className="d-inline-block" alt=""/>
+          <h1 className="d-inline-block align-middle text-warning">&nbsp;EasyTyres</h1>    
+        </span>
         <div className="navbar-nav ms-auto">
-          <li className="nav-item">
-            <Link to={"/tyres"} className="nav-link">
+          {/* <li className="nav-item">                           // Not using this function at the moment
+            <Link to={"/tyres"} className="nav-link text-warning">
               All Tyres
             </Link>
-          </li>
-          <li className="nav-item" >
-            { user ? (
-              <a onClick={logout} className="nav-link" style={{cursor:'pointer'}}>
-                Logout {user.name}
-              </a>
-            ) : (            
-            <Link to={"/login"} className="nav-link">
+          </li>          */}
+          <li className="nav-item" > 
+            { user ? ( // ternary statement to change login/logout if user exists. First statement after ? for when it's true that a user exists...
+              <a onClick={logout} className="nav-link text-info" style={{cursor:'pointer'}}>
+                {user.name}  
+              </a> // name appears in blue when logged in
+            ) : (// second statement: if no user exists returns to this url...
+            <Link to={"/login"} className="nav-link text-white">
               Login
             </Link>
             )}
@@ -44,8 +46,8 @@ function App() {
       </nav>
 
       <div className="container mt-3">
-        <Switch>
-          <Route exact path={["/", "/tyres"]} component={TyresList} />
+        <Switch> 
+          <Route exact path={["/", "/tyres"]} component={TyresList} /> 
           <Route 
             path="/tyres"
             render={(props) => (
@@ -62,14 +64,14 @@ function App() {
       </div>
       <div>
         <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center fixed-bottom">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1">Previous</a>
+          <ul className="pagination pagination-sm justify-content-end fixed-bottom">
+            <li className="page-item disabled">
+              <a className="page-link" href="#" tabindex="-1">Previous</a>
             </li>
-            <li class="page-item"><a class="page-link"  href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">Next</a>
+            <li className="page-item"><a className="page-link"  href="#">1</a></li>
+            <li className="page-item"><a className="page-link" href="#">2</a></li>
+            <li className="page-item">
+              <a className="page-link" href="#">Next</a>
             </li>
           </ul>
         </nav>
