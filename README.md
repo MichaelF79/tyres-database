@@ -22,8 +22,18 @@ The aim was to produce a web application with the following specifications:
  - Add some filters such as title, size, brand
  - Add pagination (Optional)
 
+
 The backend of the app was set up using Nodejs and Express. 
-The server interacts with the database using the native MongoDB JavaScript library instead of the Mongoose library.
+
 The database was manually added and hosted in the cloud using MongoDB Atlas.
+The server interacts with the database using the native MongoDB JavaScript library instead of the Mongoose library.
 
 The React frontend was set up as a single page application using Create React App and I used Bootstrap for styling.
+
+The API was tested in Postman.
+
+
+The server is automatically restarted by using nodemon (tyres-database/backend - command: nodemon server)
+The frontend is rendered with the npm start command (tyres-database/frontend - command: npm start)
+
+
