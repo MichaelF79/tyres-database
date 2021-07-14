@@ -186,15 +186,15 @@ const TyresList = props => { //react hooks used to create state variables...
         {tyres.map((tyre) => {         
           return (
             <div className="col-lg-4 mt-3 pb-1">
-              <div className="card h-100 shadow-lg p-2 mb-5 bg-white rounded" style={{width: 300}}> 
-                <img className="card-img-top rounded"src={tyre.logo_url} alt={`${tyre.brand}`} />                 
-                <img className="card-img-top rounded"src={tyre.image_url} alt={`${tyre.title}`} />
+              <div className="card h-100 shadow-lg mb-5 bg-white rounded border border-dark" style={{width: 300}}> 
+                <img className="card-img-top border-bottom border-dark"src={tyre.logo_url} alt={`${tyre.brand}`} />                 
+                <img className="card-img-top border-bottom border-secondary"src={tyre.image_url} alt={`${tyre.title}`} />
                 <div className="card-body bg-light">             
                   <h2 className="card-title text-center">{tyre.brand}</h2>
-                  <h4 className="card-subtitle text-center mb-2">{tyre.title}</h4>               
-                  <h5 className="card-text text-center">
+                  <h5 className="card-subtitle text-center mb-2">{tyre.title}</h5>               
+                  <h6 className="card-text text-center">
                     {tyre.size}                 
-                  </h5>
+                  </h6>
                   <p className="card-text text-center">
                   {tyre.description}
                   </p>                                               

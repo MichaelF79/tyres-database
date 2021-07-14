@@ -6,7 +6,7 @@ import Tyre from "./components/tyres";
 import TyresList from "./components/tyres-list";
 import Login from "./components/login";
 
-function App() { 
+const App = () => { 
 
   const [user, setUser] = React.useState(null);
   // user state variable created with react hooks
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand justify-content-center navbar-dark bg-dark text-info">
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
         <span className="navbar-brand justify-content-center" href="#">       
           <img src="assets/images/logo.png" width="50em" height="50em" className="d-inline-block" alt=""/>
           <h1 className="d-inline-block align-middle text-warning">&nbsp;EasyTyres</h1>    
