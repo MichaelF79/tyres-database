@@ -1,5 +1,7 @@
 Tyre listing web application built with the MERN Stack.
 
+![Screenshot](https://user-images.githubusercontent.com/79860073/125762971-4a11515c-f208-440a-9417-66aa2ca84f7b.png)
+
 The aim was to produce a web application with the following specifications:
 
 (1) Create a Tyres collection database featuring:
