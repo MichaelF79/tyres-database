@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/tyres-database/static/js/main.16bc60d5.chunk.js",
+    "main.js.map": "/tyres-database/static/js/main.16bc60d5.chunk.js.map",
+    "runtime-main.js": "/tyres-database/static/js/runtime-main.d63b14d6.js",
+    "runtime-main.js.map": "/tyres-database/static/js/runtime-main.d63b14d6.js.map",
+    "static/css/2.61b4cb56.chunk.css": "/tyres-database/static/css/2.61b4cb56.chunk.css",
+    "static/js/2.16265dc7.chunk.js": "/tyres-database/static/js/2.16265dc7.chunk.js",
+    "static/js/2.16265dc7.chunk.js.map": "/tyres-database/static/js/2.16265dc7.chunk.js.map",
+    "index.html": "/tyres-database/index.html",
+    "static/css/2.61b4cb56.chunk.css.map": "/tyres-database/static/css/2.61b4cb56.chunk.css.map",
+    "static/js/2.16265dc7.chunk.js.LICENSE.txt": "/tyres-database/static/js/2.16265dc7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d63b14d6.js",
+    "static/css/2.61b4cb56.chunk.css",
+    "static/js/2.16265dc7.chunk.js",
+    "static/js/main.16bc60d5.chunk.js"
+  ]
+}
